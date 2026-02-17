@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Number Guess Game</title>
+</head>
+<body>
+  <script>
+    // Generate random number between 1 and 100
+    const randomNumber = Math.floor(Math.random() * 100) + 1;
+    let attempts = 0;
+    let guess;
+
+    while (guess !== randomNumber) {
+      guess = Number(prompt("Guess a number between 1 and 100:"));
+      attempts++;
+
+      if (guess > randomNumber) {
+        alert("Too high! Try again.");
+      } else if (guess < randomNumber) {
+        alert("Too low! Try again.");
+      } else if (guess === randomNumber) {
+        alert("🎉 Correct! You guessed it in " + attempts + " attempts.");
+      } else {
+        alert("Please enter a valid number.");
+      }
+    }
+  </script>
+</body>
+</html>
